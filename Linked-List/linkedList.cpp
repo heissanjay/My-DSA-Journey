@@ -40,6 +40,8 @@ int main(int argc, char const *argv[])
 		cout<<n->data<<" ";
 		n = n->next;
 	}
+	// output
+	// 1 2 3 4
 
 	cout<<endl;
 	return 0;
