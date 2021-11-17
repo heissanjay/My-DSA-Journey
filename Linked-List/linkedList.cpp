@@ -15,6 +15,20 @@ void insertFront(Node** temp,int d){
 	(*temp) = newNode;
 }
 
+void insertAfter(Node* preNode,int data){
+	// Checking if previous node is NULL
+
+	if(preNode == NULL){
+		cout<<"Cannot insert at this position"<<endl;
+		return;
+	}
+
+	Node* newNode = new Node();
+	newNode->data = data;
+	newNode->next = preNode->next;
+	preNode->next = newNode;
+}
+
 int main(int argc, char const *argv[])
 {
 	// creating new nodes
@@ -33,6 +47,7 @@ int main(int argc, char const *argv[])
 	third->next = NULL;
 
 	insertFront(&head,1);
+	insertAfter(head,6);
 
 	// printing linked list
 	Node *n = head;
@@ -41,7 +56,7 @@ int main(int argc, char const *argv[])
 		n = n->next;
 	}
 	// output
-	// 1 2 3 4
+	// 1 6 2 3 4
 
 	cout<<endl;
 	return 0;
