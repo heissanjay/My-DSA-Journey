@@ -45,27 +45,29 @@ void append(Node** temp,int nData){
 	lNode->next = newNode;
 	return ;
 }
-// void deleteNode(Node** head,int val){
-// 	Node* temp = *head;
-// 	Node* prev = NULL;
-	
-// 	if(temp != NULL && temp->data == val){
-// 		*head = temp->next;
-// 		delete temp;
-// 		return;
-// 	}else{
-// 	while(temp != NULL && temp->data != val){
-// 		prev = temp;
-// 		temp = temp->next;
-// 	}
-// 	if(temp == NULL)  return;
-// 	prev->next = temp->next;
-// 	delete temp;
-// }
-// }
-// recursive function to delete the node
 
-void deleteNode(Node*& head,int val){
+void deleteNode(Node** head,int val){
+	Node* temp = *head;
+	Node* prev = NULL;
+	
+	if(temp != NULL && temp->data == val){
+		*head = temp->next;
+		delete temp;
+		return;
+	}else{
+	while(temp != NULL && temp->data != val){
+		prev = temp;
+		temp = temp->next;
+	}
+	if(temp == NULL)  return;
+	prev->next = temp->next;
+	delete temp;
+}
+}
+
+
+// recursive function to delete the node
+void deleteNodeRec(Node*& head,int val){
 	if(head == NULL) return;
 
 	if (head->data == val)
@@ -102,7 +104,7 @@ int main(int argc, char const *argv[])
 	// Pass (pointer to pointer) as argument
 	// (double Pointer) in insertBefore func();
 	display(head);
-	deleteNode(head,4);
+	deleteNode(&head,4);
 	display(head);
 	
 	return 0;
