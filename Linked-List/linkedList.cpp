@@ -131,10 +131,10 @@ int main(int argc, char const *argv[])
 
 	// Pass (pointer to pointer) as argument
 	// (double Pointer) in insertBefore func();
-	cout<<"List before deletion: ";
+	cout<<"List before deletion : ";
 	display(head);
 	deleteList(&head);
-	cout<<"List after deletion: ";
+	cout<<"List after deletion : ";
 	display(head);
 	
 	return 0;
