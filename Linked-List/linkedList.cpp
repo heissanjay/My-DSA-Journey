@@ -78,7 +78,27 @@ void deleteNodeRec(Node*& head,int val){
 		delete temp;
 		return;
 	}
-	deleteNode(head->next,val);
+	deleteNodeRec(head->next,val);
+}
+
+// delete a node at given position
+void deleteAtPos(Node** head,int pos){
+	if(*head == NULL) return;
+
+	Node* temp = *head;
+	if (pos == 1)
+	{
+		*head = temp->next;
+		delete temp; return;
+	}
+	for (int i = 0; temp != NULL && i < pos - 1; ++i) temp = temp->next;
+
+	if(temp == NULL or temp->next == NULL) return ;
+	
+	Node* node = temp->next->next;
+	delete temp->next;
+	temp->next = node;
+
 }
 
 
@@ -104,7 +124,7 @@ int main(int argc, char const *argv[])
 	// Pass (pointer to pointer) as argument
 	// (double Pointer) in insertBefore func();
 	display(head);
-	deleteNode(&head,4);
+	deleteAtPos(&head,1);
 	display(head);
 	
 	return 0;
