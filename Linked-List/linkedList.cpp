@@ -84,7 +84,6 @@ void deleteNodeRec(Node*& head,int val){
 // delete a node at given position
 void deleteAtPos(Node** head,int pos){
 	if(*head == NULL) return;
-
 	Node* temp = *head;
 	if (pos == 1)
 	{
@@ -92,15 +91,24 @@ void deleteAtPos(Node** head,int pos){
 		delete temp; return;
 	}
 	for (int i = 0; temp != NULL && i < pos - 1; ++i) temp = temp->next;
-
 	if(temp == NULL or temp->next == NULL) return ;
-	
 	Node* node = temp->next->next;
 	delete temp->next;
 	temp->next = node;
 
 }
+void deleteList(Node** head){
+	Node* current = (*head);
+	Node* next = NULL;
 
+	while(current != NULL){
+		next = current->next;
+		delete current;
+		current = next;
+	}
+
+	*head = NULL;
+}
 
 int main(int argc, char const *argv[])
 {
@@ -123,8 +131,10 @@ int main(int argc, char const *argv[])
 
 	// Pass (pointer to pointer) as argument
 	// (double Pointer) in insertBefore func();
+	cout<<"List before deletion: ";
 	display(head);
-	deleteAtPos(&head,1);
+	deleteList(&head);
+	cout<<"List after deletion: ";
 	display(head);
 	
 	return 0;
