@@ -1,63 +1,93 @@
-#include <iostream>
-using namespace  std;
+#include<iostream>
+using namespace std;
 
 class Node{
 public:
 	int data;
-	Node* next;
+	Node *next;
 };
 
+void display(Node* n){
+	while(n != NULL){
+		cout<<n->data<<"->";
+		n= n->next;
+	}
+	cout<<"NULL"<<endl;
+}
 
-void insertFront(Node** temp,int d){
+void insertBefore(Node** temp,int nData){
 	Node* newNode = new Node();
-	newNode->data = d;
+	newNode->data = nData;
 	newNode->next = (*temp);
 	(*temp) = newNode;
 }
-
-void insertAfter(Node* preNode,int data){
-	// Checking if previous node is NULL
-
+void insertAfter(Node* preNode,int nData){
 	if(preNode == NULL){
-		cout<<"Cannot insert at this position"<<endl;
-		return;
+		cout<<"List is empty "; return;
 	}
-
 	Node* newNode = new Node();
-	newNode->data = data;
+	newNode->data = nData;
 	newNode->next = preNode->next;
 	preNode->next = newNode;
+}
+void append(Node** temp,int nData){
+	Node* newNode = new Node();
+	newNode->data = nData;
+	newNode->next = NULL;
+
+	if((*temp) == NULL){
+		(*temp) = newNode; return;
+	}
+	Node* lNode = (*temp);
+	while(lNode->next != NULL){
+		lNode = lNode->next;
+	}
+	lNode->next = newNode;
+	return ;
+}
+void deleteNode(Node** head,int val){
+	Node* temp = *head;
+	Node* prev = NULL;
+	
+	if(temp != NULL && temp->data == val){
+		*head = temp->next;
+		delete temp;
+		return;
+	}else{
+	while(temp != NULL && temp->data != val){
+		prev = temp;
+		temp = temp->next;
+	}
+	if(temp == NULL)  return;
+	prev->next = temp->next;
+	delete temp;
+}
 }
 
 int main(int argc, char const *argv[])
 {
-	// creating new nodes
-	Node* head = new Node();
+	Node* head = NULL;
+	head = new Node();
 	Node* second = new Node();
 	Node* third = new Node();
+	Node* four = new Node();
 
-	// assinging values to the node
-	head->data = 2;
+	// // assiging data to nodes
+
+	head->data = 1;
 	head->next = second;
-
-	second->data = 3;
+	second->data = 2;
 	second->next = third;
+	third->data = 3;
+	third->next = four;
+	four->data = 4;
+	four->next = NULL;
 
-	third->data  = 4;
-	third->next = NULL;
-
-	insertFront(&head,1);
-	insertAfter(head,6);
-
-	// printing linked list
-	Node *n = head;
-	while(n != NULL){
-		cout<<n->data<<" ";
-		n = n->next;
-	}
-	// output
-	// 1 6 2 3 4
-
-	cout<<endl;
+	// Pass (pointer to pointer) as argument
+	// (double Pointer) in insertBefore func();
+	display(head);
+	deleteNode(&head,4);
+	display(head);
+	
 	return 0;
 }
