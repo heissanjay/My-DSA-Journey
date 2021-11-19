@@ -75,7 +75,7 @@ void insertLast(Node** head,int val){
 /* Delete operations
 Delete the node at given postion */
 void deleteAtPos(Node** head,int pos){
-	if(*head == NULL) return;
+	if(*head == NULL) return; // list is empty
 	Node* temp = *head;
 	if (pos == 1)
 	{
@@ -102,30 +102,32 @@ int main(int argc, char const *argv[])
 
 
 	head->prev = NULL;
-	head->data = 1;
+	head->data = 10;
 	head->next = second;
 	
 	second->prev = head;
-	second->data = 2;
+	second->data = 8;
 	second->next = third;
 
 	third->prev = second;
-	third->data = 3;
+	third->data = 4;
 	third->next = fourth;
 
 	fourth->prev = third;
-	fourth->data = 4;
+	fourth->data = 2;
 	fourth->next = NULL;
 	Node* tail = fourth;
 
 	// insertFront(&head,2);
 	// insertBefore(&(third->next),4);
-	display(head);
-	insertAfter(fourth,5);
-	display(head);
-	insertLast(&head,6);
+	// display(head);
+	// insertAfter(fourth,5);
+	// display(head);
+	// insertLast(&head,6);
 	display(head);
 //	displayReverse(tail);
+	// deleteAtPos(&head,1);
+	// deleteAtPos(&head,2);
 	deleteAtPos(&head,2);
 	display(head);
 
