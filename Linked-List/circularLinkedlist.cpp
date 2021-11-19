@@ -6,6 +6,17 @@ public:
 	int data;
 	Node* next;
 };
+void display(Node* head){
+	Node* temp = head;
+	if (temp != NULL) // list is non empty
+	{
+		do{
+			cout<<temp->data<<" ";
+			temp = temp->next;
+		}while(temp != head);
+	}
+	cout<<endl;
+}
 
 int main(int argc, char const *argv[])
 {
@@ -27,6 +38,6 @@ int main(int argc, char const *argv[])
 	four->next = head;
 
 	
-
+	display(head);
 	return 0;
 }
