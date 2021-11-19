@@ -8,7 +8,7 @@ public:
 	Node* next;
 };
 
-
+/* Display operations */
 void display(Node* n){
 	while(n != NULL){
 		cout<<n->data<<"->";
@@ -23,6 +23,8 @@ void displayReverse(Node* tail){
 	}
 	cout<<"END"<<endl;
 }
+
+/* Insert Operation */
 
 // void insertFront(Node** temp, int val){
 // 	Node* newNode = new Node();
@@ -70,7 +72,21 @@ void insertLast(Node** head,int val){
 	lNode->next = newNode;
 	newNode->prev = lNode;
 }
+/* Delete operations
+Delete the node at given postion */
+void deleteNode(Node** head,int position)
+{
+	/* base case*/ 
+	if(*head == NULL) return;
+	Node* del = *head;
+	if(position == 1) *head = del->next; free(del); return;
 
+	for(int i =0; i < position-1 && del! = NULL; ++i){
+		del = del->next;
+	}
+}
+
+/* main function / Driver Code */
 int main(int argc, char const *argv[])
 {
 	Node* head = NULL;
@@ -104,6 +120,9 @@ int main(int argc, char const *argv[])
 	display(head);
 	insertLast(&head,6);
 	display(head);
-	displayReverse(tail);
+//	displayReverse(tail);
+	deleteNode(&head,third);
+	display(head);
+
 	return 0;
 }

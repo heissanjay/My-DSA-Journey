@@ -95,7 +95,6 @@ void deleteAtPos(Node** head,int pos){
 	Node* node = temp->next->next;
 	delete temp->next;
 	temp->next = node;
-
 }
 void deleteList(Node** head){
 	Node* current = (*head);
