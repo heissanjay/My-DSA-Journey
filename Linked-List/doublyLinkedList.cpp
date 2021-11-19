@@ -16,6 +16,14 @@ void display(Node* n){
 	}
 	cout<<"NULL"<<endl;
 }
+void displayReverse(Node* tail){
+	while(tail != NULL){
+		cout<<tail->data<<"->";
+		tail = tail->prev;
+	}
+	cout<<"END"<<endl;
+}
+
 // void insertFront(Node** temp, int val){
 // 	Node* newNode = new Node();
 // 	newNode->data = val;
@@ -47,6 +55,21 @@ void insertAfter(Node* preNode, int val){
 		newNode->next->prev = newNode;
 	}
 }
+void insertLast(Node** head,int val){
+	Node* lNode = (*head);
+	Node* newNode = new Node();
+
+	newNode->data = val;
+	newNode->next = NULL;
+	if(*head == NULL){
+		newNode->prev = NULL; *head = newNode; return;
+	}
+	while(lNode->next != NULL){
+		lNode = lNode->next;
+	}
+	lNode->next = newNode;
+	newNode->prev = lNode;
+}
 
 int main(int argc, char const *argv[])
 {
@@ -72,10 +95,15 @@ int main(int argc, char const *argv[])
 	fourth->prev = third;
 	fourth->data = 4;
 	fourth->next = NULL;
+	Node* tail = fourth;
 
 	// insertFront(&head,2);
 	// insertBefore(&(third->next),4);
+	display(head);
 	insertAfter(fourth,5);
 	display(head);
+	insertLast(&head,6);
+	display(head);
+	displayReverse(tail);
 	return 0;
 }
