@@ -90,7 +90,7 @@ void deleteAtPos(Node** head,int pos){
 		*head = temp->next;
 		delete temp; return;
 	}
-	for (int i = 0; temp != NULL && i < pos - 1; ++i) temp = temp->next;
+	for (int i = 1; temp != NULL && i < pos - 1; ++i) temp = temp->next;
 	if(temp == NULL or temp->next == NULL) return ;
 	Node* node = temp->next->next;
 	delete temp->next;
@@ -130,10 +130,14 @@ int main(int argc, char const *argv[])
 
 	// Pass (pointer to pointer) as argument
 	// (double Pointer) in insertBefore func();
-	cout<<"List before deletion : ";
+	// cout<<"List before deletion : ";
+	// display(head);
+	// deleteList(&head);
+	// cout<<"List after deletion : ";
+	// display(head);
+
 	display(head);
-	deleteList(&head);
-	cout<<"List after deletion : ";
+	deleteAtPos(&head,1);
 	display(head);
 	
 	return 0;

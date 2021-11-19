@@ -74,17 +74,22 @@ void insertLast(Node** head,int val){
 }
 /* Delete operations
 Delete the node at given postion */
-void deleteNode(Node** head,int position)
-{
-	/* base case*/ 
+void deleteAtPos(Node** head,int pos){
 	if(*head == NULL) return;
-	Node* del = *head;
-	if(position == 1) *head = del->next; free(del); return;
-
-	for(int i =0; i < position-1 && del! = NULL; ++i){
-		del = del->next;
+	Node* temp = *head;
+	if (pos == 1)
+	{
+		*head = temp->next;
+		delete temp; return;
 	}
+	for (int i = 1; temp != NULL && i < pos - 1; ++i) temp = temp->next;
+	if(temp == NULL or temp->next == NULL) return ;
+	Node* node = temp->next->next;
+	delete temp->next;
+	temp->next = node;
+	node->prev = temp->next->prev;
 }
+/* ------------------ */
 
 /* main function / Driver Code */
 int main(int argc, char const *argv[])
@@ -121,7 +126,7 @@ int main(int argc, char const *argv[])
 	insertLast(&head,6);
 	display(head);
 //	displayReverse(tail);
-	deleteNode(&head,third);
+	deleteAtPos(&head,2);
 	display(head);
 
 	return 0;
