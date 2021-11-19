@@ -137,7 +137,7 @@ int main(int argc, char const *argv[])
 	// display(head);
 
 	display(head);
-	deleteAtPos(&head,1);
+	deleteAtPos(&head,4);
 	display(head);
 	
 	return 0;

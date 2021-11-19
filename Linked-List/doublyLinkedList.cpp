@@ -84,7 +84,7 @@ void deleteAtPos(Node** head,int pos){
 	}
 	for (int i = 1; temp != NULL && i < pos - 1; ++i) temp = temp->next;
 	if(temp == NULL or temp->next == NULL) return ;
-	Node* node = temp->next->next;
+	Node* node = temp->next->next;if(node == NULL) temp->next = NULL; delete node; return;
 	delete temp->next;
 	temp->next = node;
 	node->prev = temp->next->prev;
@@ -128,7 +128,7 @@ int main(int argc, char const *argv[])
 //	displayReverse(tail);
 	// deleteAtPos(&head,1);
 	// deleteAtPos(&head,2);
-	deleteAtPos(&head,2);
+	deleteAtPos(&head,4);
 	display(head);
 
 	return 0;
