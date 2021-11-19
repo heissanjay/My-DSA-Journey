@@ -35,7 +35,18 @@ void insertBefore(Node** temp, int val){
 	(*temp) = newNode;
 }
 
+void insertAfter(Node* preNode, int val){
+	Node* newNode = new Node();
+	newNode->data = val;
 
+	newNode->next = preNode->next;
+	preNode->next = newNode;
+	newNode->prev = preNode;
+
+	if(newNode->next != NULL){
+		newNode->next->prev = newNode;
+	}
+}
 
 int main(int argc, char const *argv[])
 {
@@ -63,7 +74,8 @@ int main(int argc, char const *argv[])
 	fourth->next = NULL;
 
 	// insertFront(&head,2);
-	insertBefore(&(third->next),4);
+	// insertBefore(&(third->next),4);
+	insertAfter(fourth,5);
 	display(head);
 	return 0;
 }
