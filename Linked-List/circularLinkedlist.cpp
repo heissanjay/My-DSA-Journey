@@ -15,7 +15,24 @@ void display(Node* head){
 	}while(temp != head);
 	cout<<"HEAD"<<endl;
 }
+void insertFront(Node** head,int data){
+	Node* newNode = new Node();
+	Node* temp = *head;
 
+	newNode->data = data;
+	newNode->next = *head;
+
+	if (temp != NULL)
+	{
+		while(temp->next!=*head){
+			temp=temp->next;
+		}
+		temp->next = newNode;
+	}else{
+		newNode->next = newNode;
+	}
+	*head = newNode;
+}
 
 int main(int argc, char const *argv[])
 {
@@ -38,6 +55,8 @@ int main(int argc, char const *argv[])
 	four->data  = 4;
 	four->next = head; /*  Circular linked list */
 
+	display(head);
+	insertFront(&head,0);
 	display(head);
 
 	return 0;
