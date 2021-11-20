@@ -8,15 +8,14 @@ public:
 };
 void display(Node* head){
 	Node* temp = head;
-	if (temp != NULL) // list is non empty
-	{
-		do{
-			cout<<temp->data<<" ";
-			temp = temp->next;
-		}while(temp != head);
-	}
-	cout<<endl;
+	cout<<"HEAD->";
+	do{
+		cout<<temp->data<<"->";
+		temp = temp->next;
+	}while(temp != head);
+	cout<<"HEAD"<<endl;
 }
+
 
 int main(int argc, char const *argv[])
 {
@@ -26,18 +25,20 @@ int main(int argc, char const *argv[])
 	Node* third = new Node();
 	Node* four = new Node();
 
-	// // assiging data to nodes
-
+	// assigning data to nodes
 	head->data = 1;
 	head->next = second;
+
 	second->data = 2;
 	second->next = third;
+
 	third->data = 3;
 	third->next = four;
-	four->data = 4;
-	four->next = head;
 
-	
+	four->data  = 4;
+	four->next = head; /*  Circular linked list */
+
 	display(head);
+
 	return 0;
 }
