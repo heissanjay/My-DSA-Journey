@@ -5,5 +5,5 @@
 * Linked List
   * [x] Singly Linked list
   * [x] Doubly Linked list
-  * [ ] Circular Linked list
+  * [x] Circular Linked list
 
