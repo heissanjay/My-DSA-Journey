@@ -1,4 +1,4 @@
-### Learning Data Structures and Algorithm
+### Data Structures and Algorithm in C++
 
 ![dsa-banner](imgs/dsa-banner.jpg)
 [Image Credits] (https://medium.com/@mohamedmansormemo/algorithms-and-data-structure-1c2ad2dd8675)
