@@ -61,7 +61,29 @@ void insertAfter(Node** head,int val,int position){
     newNode->prev = temp->next->prev = newNode;
     temp->next = newNode;
 }
-
+void deleteAtPos(Node** head,int position){
+    Node* temp = *head;
+    if(temp == NULL) return;
+    if(position == 1){
+        (*head)->prev->next = (*head)->next;
+        (*head)->next->prev = (*head)->prev;
+        *head = temp->next; free(temp); return;
+    } 
+    for(int i = 1; i < position - 1 && temp->next != *head;++i) temp = temp->next;
+    /* return if index out of bound */
+    if(temp == *head or temp->next == *head) return;
+    /* delete a node at last postion */
+    Node* node = temp->next->next;if(node == *head){
+        temp->next=temp->next->next;
+        node->prev = temp;
+        free(temp->next); return;
+    } 
+    /*-------------------------------*/
+    Node* newNode = temp->next;
+    temp->next = node->next;
+    newNode->next->prev = temp;
+    free(node);
+}
 int main(int argc, char const *argv[]){
     Node* head = NULL;
     
@@ -95,6 +117,8 @@ int main(int argc, char const *argv[]){
     insertEnd(&head,5);
     display(head);
     insertAfter(&head,1,3);
+    display(head);
+    deleteAtPos(&head,7);
     display(head);
 
     return 0;
