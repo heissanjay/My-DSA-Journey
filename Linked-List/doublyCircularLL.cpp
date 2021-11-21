@@ -18,6 +18,13 @@ void display(Node* head){
 	cout<<"HEAD"<<endl;
 }
 void insertFront(Node** head,int val){
+    /* if List is empty */
+    if((*head) == NULL ){
+        Node* newNode = new Node();
+        newNode->data=val;
+        newNode->next = newNode->prev = newNode;
+        *head = newNode; return;
+    }
     Node* last = (*head)->prev;
     Node* newNode = new Node();
     newNode->data = val;
@@ -29,9 +36,35 @@ void insertFront(Node** head,int val){
 
     *head = newNode;
 }
+void insertEnd(Node** head,int val){
+    /* if List is empty */
+    if((*head) == NULL ){
+        Node* newNode = new Node();
+        newNode->data=val;
+        newNode->next = newNode->prev = newNode;
+        *head = newNode; return;
+    }
+    Node* last = (*head)->prev;
+    Node* newNode = new Node();
+    newNode->data  = val;
+
+    newNode->next = *head;  
+    newNode->prev = (*head)->prev = newNode;
+    last->next = newNode;    
+}
+void insertAfter(Node** head,int val,int position){
+    Node* temp = *head;
+    Node* newNode = new Node();
+    newNode->data= val;
+    for(int i =1 ; i < position -1 && temp->next != *head ; ++i) temp = temp->next;    
+    newNode->next = temp->next;
+    newNode->prev = temp->next->prev = newNode;
+    temp->next = newNode;
+}
 
 int main(int argc, char const *argv[]){
     Node* head = NULL;
+    
     head  = new Node();
     Node* second = new Node();
     Node* third = new Node();
@@ -53,9 +86,15 @@ int main(int argc, char const *argv[]){
     last->prev = third;
     last->data = 4;
     last->next = head;
-    
-    display(head);
+
+    // insertFront(&head,1);
+    // insertEnd(&head,2);
+    // display(head);
     insertFront(&head,0);
+    display(head);
+    insertEnd(&head,5);
+    display(head);
+    insertAfter(&head,1,3);
     display(head);
 
     return 0;
