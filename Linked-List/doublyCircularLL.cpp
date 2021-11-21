@@ -72,6 +72,7 @@ void deleteAtPos(Node** head,int position){
     for(int i = 1; i < position - 1 && temp->next != *head;++i) temp = temp->next;
     /* return if index out of bound */
     if(temp == *head or temp->next == *head) return;
+    
     /* delete a node at last postion */
     Node* node = temp->next->next;if(node == *head){
         temp->next=temp->next->next;
