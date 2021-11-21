@@ -17,16 +17,28 @@ void display(Node* head){
 	}while(temp != head);
 	cout<<"HEAD"<<endl;
 }
+void insertFront(Node** head,int val){
+    Node* last = (*head)->prev;
+    Node* newNode = new Node();
+    newNode->data = val;
 
+    newNode->next = *head;
+    newNode->prev = last;
+     
+    last->next = (*head)->prev = newNode;
+
+    *head = newNode;
+}
 
 int main(int argc, char const *argv[]){
-    Node* head = NULL; head  = new Node();
+    Node* head = NULL;
+    head  = new Node();
     Node* second = new Node();
     Node* third = new Node();
-    Node* four = new Node();
+    Node* last = new Node();
 
     // assinging data to node
-    head->prev = four;
+    head->prev = last;
     head->data = 1;
     head->next = second;
 
@@ -36,12 +48,14 @@ int main(int argc, char const *argv[]){
 
     third->prev = second;
     third->data = 3;
-    third->next = four;
+    third->next = last;
 
-    four->prev = third;
-    four->data = 4;
-    four->next = head;
+    last->prev = third;
+    last->data = 4;
+    last->next = head;
     
+    display(head);
+    insertFront(&head,0);
     display(head);
 
     return 0;
