@@ -2,6 +2,7 @@
 
 ![dsa-banner](imgs/dsa-banner.jpg)
 [Image Credits](https://medium.com/@mohamedmansormemo/algorithms-and-data-structure-1c2ad2dd8675)
+* Arrays 
 * Linked List
    * Singly Linked list
    * Doubly Linked list
