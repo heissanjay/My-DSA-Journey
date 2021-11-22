@@ -17,6 +17,9 @@ string days[7] = {"Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","S
 int main(int argc, char const *argv[])
 {
 	// Accessing element of an array
+	// Array index is start from 0
+
+	cout<<"First day of a week is "<<days[0]<<endl;
 	
 	return 0;
 }
