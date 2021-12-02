@@ -1,0 +1,33 @@
+List of all function of map:
+
+insert()
+count()
+equal_range()
+erase()
+rend()
+rbegin()
+find()
+erase()
+crbegin()
+crend()
+cbegin()
+cend()
+emplace()
+emplace_hint()
+max_size()
+upper_bound()
+lower_bound()
+'=' operator // assign values of one map to another map : map1 = map2;
+size()
+empty()
+at()
+swap() // used to swap the contents of two maps (which of same type) : swap(map1,map2)
+clear() // removes all the elements presents in map
+'[]' operator // map1[1] = "one";
+value_comp()
+key_comp()
+
+
+
+
+
