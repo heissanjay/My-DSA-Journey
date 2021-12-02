@@ -30,13 +30,10 @@ int main(int argc, char const *argv[])
 
 
 	/* iterating through the map */
-	// map<int,string>::iterator iter; // create an iterator
-	// for(iter = numInWords.begin();iter!=numInWords.end();++iter){
-	// 	cout<<iter->first<<"\t"<<iter->second<<"\n";
-	// }	
-
-	// size()
-	cout<<numInWords.count(6);
+	map<int,string>::iterator iter; // create an iterator
+	for(iter = numInWords.begin();iter!=numInWords.end();++iter){
+		cout<<iter->first<<"\t"<<iter->second<<"\n";
+	}	
 
 	return 0;
 }
