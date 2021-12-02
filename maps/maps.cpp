@@ -13,7 +13,13 @@ int main(int argc, char const *argv[])
 {
 	/*assing values to the map */
 	numInWords.insert(pair<int,string>(1,"one"));
-	cout<<(numInWords.begin())->first<<"\t";
-	cout<<(numInWords.begin())->second<<endl;
+	numInWords.insert(pair<int,string>(2,"two"));
+	numInWords.insert(pair<int,string>(3,"three"));
+	numInWords.insert(pair<int,string>(4,"four"));
+	numInWords.insert(pair<int,string>(5,"five"));
+	numInWords.insert(pair<int,string>(6,"six"));
+
+	cout<<(numInWords.find(6))->first<<"\t";
+	cout<<(numInWords.find(6))->second<<endl;
 	return 0;
 }
