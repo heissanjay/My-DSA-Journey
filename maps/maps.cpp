@@ -7,7 +7,6 @@ using namespace std;
 
 /* Defining a Map */
 map<int,string> numInWords;
-map<int,string>::iterator iter;
 
 int main(int argc, char const *argv[])
 {
@@ -27,7 +26,10 @@ int main(int argc, char const *argv[])
 	numInWords.insert({5,"five"});
 	numInWords.insert({6,"six"});
 
-	cout<<(numInWords.find(4))->first<<"\t";
-	cout<<(numInWords.find(4))->second<<endl;
+	/* iterating through the map */
+	map<int,string>::iterator iter; // create an iterator
+	for(iter = numInWords.begin();iter!=numInWords.end();++iter){
+		cout<<iter->first<<"\t"<<iter->second<<"\n";
+	}	
 	return 0;
 }
