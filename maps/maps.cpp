@@ -25,11 +25,18 @@ int main(int argc, char const *argv[])
 	numInWords.insert({4,"four"});
 	numInWords.insert({5,"five"});
 	numInWords.insert({6,"six"});
+	numInWords.insert({6,"six"});
+
+
 
 	/* iterating through the map */
-	map<int,string>::iterator iter; // create an iterator
-	for(iter = numInWords.begin();iter!=numInWords.end();++iter){
-		cout<<iter->first<<"\t"<<iter->second<<"\n";
-	}	
+	// map<int,string>::iterator iter; // create an iterator
+	// for(iter = numInWords.begin();iter!=numInWords.end();++iter){
+	// 	cout<<iter->first<<"\t"<<iter->second<<"\n";
+	// }	
+
+	// size()
+	cout<<numInWords.count(6);
+
 	return 0;
 }
