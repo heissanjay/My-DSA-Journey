@@ -9,8 +9,9 @@ int main(int argc, char const *argv[])
 	int arrlen = sizeof(arr)/sizeof(arr[0])
 	for (int i = 0; i < arrlen; ++i)
 	{
-		/* code */
+		cout<<arr[i]<<" ";
 	}
+	cout<<'\n';
 	
 	return 0;
 }
