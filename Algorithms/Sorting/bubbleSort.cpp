@@ -1,7 +1,17 @@
 #include <iostream>
 using namespace std;
 
-
+void bubbleSort(int arr[],int arrlen){
+	for(int i = 0; i < arrlen;++i){
+		for(int j = i + 1; j < arrlen; ++j){
+			if(arr[i] > arr[j]){
+				int temp = arr[i];
+				arr[i] = arr[j];
+				arr[j] = temp;
+			}
+		}
+	}
+}
 
 int main(int argc, char const *argv[])
 {
@@ -13,6 +23,6 @@ int main(int argc, char const *argv[])
 		cout<<arr[i]<<" ";
 	}
 	cout<<'\n';
-	
+	bubbleSort(arr,arrlen);
 	return 0;
 }
