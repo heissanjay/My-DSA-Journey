@@ -90,3 +90,5 @@ public:
         return slw;
     }
 };
+
+// https://leetcode.com/problems/happy-number/
