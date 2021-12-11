@@ -92,3 +92,29 @@ public:
 };
 
 // https://leetcode.com/problems/happy-number/
+
+class Solution {
+public:
+    int findSquare(int num){
+        int square = 0;
+        while(num > 0) {
+            int digit = num % 10;
+            square+=digit*digit;
+            num/=10;
+        }
+        return square;
+    }
+    bool isHappy(int n) {
+        int fast = n;
+        int slow = n;
+        
+        do{
+            slow = findSquare(slow);
+            fast = findSquare(findSquare(fast));
+        }while(slow!=fast);
+        
+        if(slow == 1) return true;
+        
+        return false;
+    }
+};
