@@ -134,3 +134,23 @@ public:
     }
 };
 https://leetcode.com/problems/delete-the-middle-node-of-a-linked-list/submissions/
+class Solution {
+public:
+    ListNode* deleteMiddle(ListNode* head) {
+        if(head == nullptr || head->next==nullptr){
+            head = nullptr;
+            return head;
+        }
+        ListNode* fast = head;
+        ListNode* slow = head;
+        ListNode* prev = nullptr;
+
+        while(fast!= nullptr && fast->next!=nullptr){
+            prev = slow;
+            slow = slow->next;
+            fast = fast->next->next;
+        } 
+        prev->next = slow->next;
+        return head;
+    }
+};
