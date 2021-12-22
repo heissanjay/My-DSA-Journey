@@ -50,7 +50,10 @@ void Stack::display(){
 	for(int i = top;i >= 0; --i)
 		cout<<arr[i]<<"\n";
 }
-
+int Stack::peek(){
+	int peekVal = arr[top];
+	return peekVal;
+}
 
 int main(int argc, char const *argv[])
 {
@@ -60,21 +63,10 @@ int main(int argc, char const *argv[])
 	stk.push(3);
 	stk.push(4);
 	stk.display();
+	cout<<"\n";
 	stk.pop();
 	stk.display();
+	cout<<"\n";
+	stk.peek();
 	return 0;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
