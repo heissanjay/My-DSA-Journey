@@ -39,7 +39,11 @@ int Stack::push(int val){
 		return 0;
 	}
 }
-
+int Stack::pop(){
+	int popVal = arr[top];
+	top--;
+	return popVal;
+}
 
 void Stack::display(){
 	for(int i = top;i >= 0; --i)
