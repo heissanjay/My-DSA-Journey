@@ -9,4 +9,5 @@
    * Circular Linked list
    * Doubly Circular Linked list
 * Maps
+* Stacks
 * 
