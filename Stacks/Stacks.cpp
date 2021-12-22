@@ -1,35 +1,78 @@
 /* Array implementation of Stack */
-
-#include<iostream>
+#include <iostream>
 using namespace std;
+#define MAX 100
 
-#define MAX 100	
-
-// Defining the stack
 class Stack{
 	int top;
-public:
 	int arr[MAX];
-	Stack() {top = -1;}
-	bool push(int val);
-	int pop();
-	int peek();
+public:
+	Stack(){
+		top = -1;
+	}
+	bool isFull();
 	bool isEmpty();
+	int push(int val);
+	void display();
+	int pop();
 };
-// function to push the element to the stack
-bool Stack::push(int val){
-	if(top >= (MAX - 1)){
-		cout<<"Stack OverFlow"<<endl;
-		return false;
-	}else{
-		arr[top++]=val;
+bool Stack::isFull(){
+	if(top >= MAX)
 		return true;
+	else
+		return false;
+}
+
+bool Stack::isEmpty(){
+	if(top == -1)
+		return true;
+	else 
+		return false;
+}
+int Stack::push(int val){
+	if(isFull()){
+		cout<<"Stack Overflow"<<endl;return 0;
+	}
+	else{
+		top++;
+		arr[top] = val;
+		return 0;
 	}
 }
 
+
+void Stack::display(){
+	for(int i = top;i >= 0; --i)
+		cout<<arr[i]<<"\n";
+}
+
+
 int main(int argc, char const *argv[])
 {
-	class Stack stk;
+	Stack stk;
+	stk.push(1);
+	stk.push(2);
 	stk.push(3);
+	stk.push(4);
+	stk.push(5);
+	stk.push(6);
+	stk.push(7);
+	stk.display();
+	stk.pop();
+	stk.display();
 	return 0;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
