@@ -15,6 +15,7 @@ public:
 	int push(int val);
 	void display();
 	int pop();
+	int peek();
 };
 bool Stack::isFull(){
 	if(top >= MAX)
