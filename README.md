@@ -10,4 +10,4 @@
    * Doubly Circular Linked list
 * Maps
 * Stacks
-* 
+* Queues
