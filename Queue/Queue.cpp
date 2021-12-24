@@ -43,10 +43,33 @@ public:
 			return 0;
 		}
 	}
+	int dequeue()
+	{
+		if (isEmpty())
+		{
+			cout << "Queue is empty" << endl;
+			return 0;
+		}
+		else if (front == 0 && rear == 0)
+		{
+			int val = arr[rear];
+			front--;
+			rear--;
+			return val;
+		}
+		else
+		{
+			int val = arr[front];
+			front++;
+			return val;
+		}
+	}
 	void display()
 	{
-		for (int i = 0; i < rear + 1; ++i)
-			cout << arr[i] << " ";
+		for (int i = front; i <= rear; ++i)
+			cout << arr[i] << "->";
+		cout << "REAR"
+			 << "\n";
 	}
 };
 
@@ -59,6 +82,8 @@ int main(int argc, char *argv[])
 	Que1.enqueue(6);
 	Que1.enqueue(6);
 	Que1.enqueue(7);
+	Que1.display();
+	Que1.dequeue();
 	Que1.display();
 	return 0;
 }
