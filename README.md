@@ -12,4 +12,4 @@
 - Maps
 - Stacks
 - Queues
-  - Linear Queues
+  - Linear Queue
