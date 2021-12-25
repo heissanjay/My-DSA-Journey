@@ -232,7 +232,9 @@ public:
             prev = current;
             current = current->next;
         }
-
+        ListNode *last = prev;
+        ListNode *end = current;
+        ListNode *next = current->next;
         for (int i = 0; current != nullptr && i < right - left + 1; ++i)
         {
             current->next = prev;
