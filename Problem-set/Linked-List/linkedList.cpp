@@ -190,3 +190,27 @@ public:
 };
 
 // https: // leetcode.com/problems/reverse-linked-list/
+class Solution
+{
+public:
+    ListNode *reverseList(ListNode *head)
+    {
+        if (head == nullptr)
+            return head;
+        ListNode *prev = nullptr;
+        ListNode *current = head;
+        ListNode *next = head->next;
+
+        while (current != nullptr)
+        {
+            current->next = prev;
+            prev = current;
+            current = next;
+            if (next != nullptr)
+            {
+                next = next->next;
+            }
+        }
+        return prev;
+    }
+};
