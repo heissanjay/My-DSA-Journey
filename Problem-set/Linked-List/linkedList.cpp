@@ -215,3 +215,43 @@ public:
     }
 };
 // https://leetcode.com/problems/reverse-linked-list-ii/
+
+class Solution
+{
+public:
+    ListNode *reverseBetween(ListNode *head, int left, int right)
+    {
+        if (left == right)
+            return head;
+
+        ListNode *prev = nullptr;
+        ListNode *current = head;
+
+        for (int i = 0; current->next != nullptr && i < left - 1; ++i)
+        {
+            prev = current;
+            current = current->next;
+        }
+
+        for (int i = 0; current != nullptr && i < right - left + 1; ++i)
+        {
+            current->next = prev;
+            prev = current;
+            current = next;
+            if (next != nullptr)
+            {
+                next = next->next;
+            }
+        }
+        if (last != nullptr)
+        {
+            last->next = prev;
+        }
+        else
+        {
+            head = prev;
+        }
+        end->next = current;
+        return head;
+    }
+};
