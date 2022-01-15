@@ -1,0 +1,4 @@
+Linear Queue 
+Circular Queue
+Priority Queue
+Double ended Queue / Deque
