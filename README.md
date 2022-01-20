@@ -27,3 +27,7 @@
   - Graph
   - Breath First Search
   - Depth First Search
+- Heaps
+  - Heap
+  - Min Heap
+  - Max Heap
