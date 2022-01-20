@@ -13,3 +13,5 @@
 - Stacks
 - Queues
   - Linear Queue
+  - Circular Queue
+  - Priority Queue
