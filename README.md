@@ -22,3 +22,8 @@
   - Binary Search Tree
   - AVL Tree
   - Threaded Binary tree
+  - Tree Traversal
+- Graphs
+  - Graph
+  - Breath First Search
+  - Depth First Search
