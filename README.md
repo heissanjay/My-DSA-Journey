@@ -19,3 +19,6 @@
 - Trees
   - Tree
   - Binary Tree
+  - Binary Search Tree
+  - AVL Tree
+  - Threaded Binary tree
