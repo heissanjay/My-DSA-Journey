@@ -23,6 +23,23 @@ void CircularQueue::enqueue(int val)
 
     arr[rear] = val;
 }
+void CircularQueue::dequeue()
+{
+    if (front == -1)
+        cout << "queue is empty";
+    else
+    {
+        int del = arr[front];
+        if (front == rear)
+            front = rear = -1;
+        else if (front == MAX - 1)
+            front = 0;
+        else
+            front++;
+
+        cout << del << endl;
+    }
+}
 int main(int argc, char const *argv[])
 {
     CircularQueue Cqueue;
