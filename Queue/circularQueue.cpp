@@ -9,6 +9,7 @@ public:
     int front = -1, rear = -1;
     void enqueue(int val);
     void dequeue();
+    void display();
 };
 void CircularQueue::enqueue(int val)
 {
@@ -40,6 +41,7 @@ void CircularQueue::dequeue()
         cout << del << endl;
     }
 }
+
 int main(int argc, char const *argv[])
 {
     CircularQueue Cqueue;
