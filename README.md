@@ -13,7 +13,7 @@
 - [x] Stacks
 - [x] Queues
   - [x] Linear Queue
-  - [ ] Circular Queue
+  - [x] Circular Queue
   - [ ] Priority Queue
   - [ ] Double Ended Queue / Deque
 - [ ] Trees
