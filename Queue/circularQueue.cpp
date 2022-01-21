@@ -1,7 +1,7 @@
 // Circular queue array implementation
 #include <iostream>
 using namespace std;
-#define MAX 10
+#define MAX 5
 class CircularQueue
 {
 public:
@@ -13,16 +13,18 @@ public:
 };
 void CircularQueue::enqueue(int val)
 {
-    if (((front == 0) && (rear = MAX - 1)) || (rear + 1 == front))
+    if (((front == 0) && (rear == MAX - 1)) || (rear + 1 == front))
         cout << "queue is full";
-    else if (rear == -1)
-        front = rear = 0;
-    else if (rear = MAX - 1)
-        rear = 0;
     else
-        rear++;
-
-    arr[rear] = val;
+    {
+        if (rear == -1)
+            front = 0, rear = 0;
+        else if (rear == MAX - 1)
+            rear = 0;
+        else
+            rear++;
+        arr[rear] = val;
+    }
 }
 void CircularQueue::dequeue()
 {
@@ -32,7 +34,7 @@ void CircularQueue::dequeue()
     {
         int del = arr[front];
         if (front == rear)
-            front = rear = -1;
+            front = -1, rear = -1;
         else if (front == MAX - 1)
             front = 0;
         else
@@ -43,32 +45,35 @@ void CircularQueue::dequeue()
 }
 void CircularQueue::display()
 {
+    if (front == -1 && rear == -1)
+        cout << "Queue is empty";
     if (front > rear)
     {
-        cout << "FRONT";
-        for (int i = front; i <= MAX; i++)
-            cout << arr[i] << "->";
+        for (int i = front; i < MAX; i++)
+            cout << arr[i] << " ";
         for (int j = 0; j <= rear; j++)
-            cout << arr[j] << "->";
-        cout << "REAR";
+            cout << arr[j] << " ";
+        cout << "\n";
     }
     else
     {
-        cout << "FRONT";
         for (int i = front; i <= rear; i++)
-            cout << arr[i] << "->";
-        cout << "REAR";
+            cout << arr[i] << " ";
+
+        cout << "\n";
     }
 }
 int main(int argc, char const *argv[])
 {
     CircularQueue Cqueue;
     Cqueue.enqueue(3);
+    Cqueue.enqueue(34);
+    Cqueue.enqueue(56);
+    Cqueue.enqueue(34);
+    Cqueue.enqueue(4);
+    Cqueue.dequeue();
     Cqueue.enqueue(12);
-    Cqueue.enqueue(43);
-    Cqueue.enqueue(67);
-    Cqueue.enqueue(33);
-    Cqueue.enqueue(22);
-    Cqueue.enqueue(86);
+    Cqueue.display();
+
     return 0;
 }
