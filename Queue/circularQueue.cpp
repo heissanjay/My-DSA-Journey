@@ -25,6 +25,13 @@ void CircularQueue::enqueue(int val)
 }
 int main(int argc, char const *argv[])
 {
-
+    CircularQueue Cqueue;
+    Cqueue.enqueue(3);
+    Cqueue.enqueue(12);
+    Cqueue.enqueue(43);
+    Cqueue.enqueue(67);
+    Cqueue.enqueue(33);
+    Cqueue.enqueue(22);
+    Cqueue.enqueue(86);
     return 0;
 }
