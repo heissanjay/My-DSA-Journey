@@ -41,7 +41,25 @@ void CircularQueue::dequeue()
         cout << del << endl;
     }
 }
-
+void CircularQueue::display()
+{
+    if (front > rear)
+    {
+        cout << "FRONT";
+        for (int i = front; i <= MAX; i++)
+            cout << arr[i] << "->";
+        for (int j = 0; j <= rear; j++)
+            cout << arr[j] << "->";
+        cout << "REAR";
+    }
+    else
+    {
+        cout << "FRONT";
+        for (int i = front; i <= rear; i++)
+            cout << arr[i] << "->";
+        cout << "REAR";
+    }
+}
 int main(int argc, char const *argv[])
 {
     CircularQueue Cqueue;
