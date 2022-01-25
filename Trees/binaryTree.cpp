@@ -27,3 +27,14 @@ struct Node *createNode(int item)
 
     return newNode;
 }
+int main(int argc, char const *argv[])
+{
+    struct Node *root = createNode(1);
+    root->left = createNode(2);
+    root->right = createNode(3);
+
+    root->left->left = createNode(4);
+    root->left->right = createNode(5);
+
+    return 0;
+}
