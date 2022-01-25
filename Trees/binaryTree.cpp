@@ -40,18 +40,31 @@ void traversePreOrder(struct Node *node)
 }
 
 // In Order Traversal
-void traverseInorder(struct Node *node)
+void traverseInOrder(struct Node *node)
 {
     if (node != nullptr)
     {
-        traverseInorder(node->left);
+        traverseInOrder(node->left);
         cout << node->item << " ";
-        traverseInorder(node->right);
+        traverseInOrder(node->right);
     }
 }
 
+// Post Order Traversal
+void traversePostOrder(struct Node *node)
+{
+    if (node != nullptr)
+    {
+        traversePostOrder(node->left);
+        traversePostOrder(node->right);
+        cout << node->item << " ";
+    }
+}
+
+// driver code
 int main(int argc, char const *argv[])
 {
+    // creating root node
     struct Node *root = createNode(1);
     root->left = createNode(2);
     root->right = createNode(3);
@@ -63,8 +76,12 @@ int main(int argc, char const *argv[])
     traversePreOrder(root);
     cout << "\n";
 
-    cout << "Inorder Traversal :";
-    traverseInorder(root);
+    cout << "InOrder Traversal :";
+    traverseInOrder(root);
+    cout << "\n";
+
+    cout << "Post Order Traversal :";
+    traversePostOrder(root);
     cout << "\n";
     return 0;
 }
