@@ -12,3 +12,18 @@ struct Node
     int item;
     struct Node *left, *right;
 };
+// func to create a new node
+struct Node *createNode(int item)
+{
+    // allocate memory for new node
+    struct Node *newNode = (struct Node *)malloc(sizeof(struct Node));
+
+    // assinging data item to node
+    newNode->item = item;
+    // pointer to left node
+    newNode->left = nullptr;
+    // pointer to right node
+    newNode->right = nullptr;
+
+    return newNode;
+}
