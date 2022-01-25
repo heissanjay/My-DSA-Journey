@@ -16,9 +16,9 @@
   - [x] Circular Queue
   - [ ] Priority Queue
   - [ ] Double Ended Queue / Deque
-- [ ] Trees
-  - [ ] Tree
-  - [ ] Binary Tree
+- [x] Trees
+  - [x] Tree
+  - [x] Binary Tree
   - [ ] Binary Search Tree
   - [ ] AVL Tree
   - [ ] Threaded Binary tree
