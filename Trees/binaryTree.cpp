@@ -38,6 +38,18 @@ void traversePreOrder(struct Node *node)
         traversePreOrder(node->right);
     }
 }
+
+// In Order Traversal
+void traverseInorder(struct Node *node)
+{
+    if (node != nullptr)
+    {
+        traverseInorder(node->left);
+        cout << node->item << " ";
+        traverseInorder(node->right);
+    }
+}
+
 int main(int argc, char const *argv[])
 {
     struct Node *root = createNode(1);
@@ -47,6 +59,12 @@ int main(int argc, char const *argv[])
     root->left->left = createNode(4);
     root->left->right = createNode(5);
 
+    cout << "PreOrder Traversal :";
     traversePreOrder(root);
+    cout << "\n";
+
+    cout << "Inorder Traversal :";
+    traverseInorder(root);
+    cout << "\n";
     return 0;
 }
