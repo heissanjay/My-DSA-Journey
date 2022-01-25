@@ -22,7 +22,7 @@
   - [ ] Binary Search Tree
   - [ ] AVL Tree
   - [ ] Threaded Binary tree
-  - [ ] Tree Traversal
+  - [x] Tree Traversal
 - [ ] Graphs
   - [ ] Graph
   - [ ] Breath First Search
