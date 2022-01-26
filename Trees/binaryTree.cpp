@@ -141,5 +141,8 @@ int main(int argc, char const *argv[])
     traversePostOrder(root);
     cout << "\n";
 
+    cout << "Level Order Traversal :";
+    levelOrderTraversal(root);
+    cout << "\n";
     return 0;
 }
