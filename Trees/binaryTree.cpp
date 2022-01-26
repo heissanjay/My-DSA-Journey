@@ -60,6 +60,29 @@ void traversePostOrder(struct Node *node)
         cout << node->item << " ";
     }
 }
+// Level Order Traversal - using Queue methoad
+void levelOrderTraversal(struct Node *node)
+{
+    if (node == nullptr)
+        return;
+
+    queue<struct Node *> q;
+    q.push(node);
+
+    while (!q.empty())
+    {
+        struct Node *temp = q.front();
+        cout << temp->item << " ";
+        q.pop();
+
+        if (temp->left != nullptr)
+            q.push(temp->left);
+
+        if (temp->right != nullptr)
+            q.push(temp->right);
+    }
+}
+
 // Level order insertion - using queue method
 struct Node *levelOrderInsertion(struct Node *node, int item)
 {
