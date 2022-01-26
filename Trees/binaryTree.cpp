@@ -1,7 +1,7 @@
 // implementation of binary tree
 
 // including required libraries
-
+#include <queue>
 #include <stdlib.h>
 #include <iostream>
 using namespace std;
@@ -60,7 +60,40 @@ void traversePostOrder(struct Node *node)
         cout << node->item << " ";
     }
 }
+// Level order insertion - using queue method
+struct Node *levelOrderInsertion(struct Node *node, int item)
+{
+    if (node == nullptr)
+    {
+        node = createNode(item);
+        return node;
+    }
+    queue<struct Node *> q;
+    q.push(node);
 
+    while (!q.empty())
+    {
+        struct Node *temp = q.front();
+        q.pop();
+
+        if (temp->left != nullptr)
+            q.push(temp->left);
+        else
+        {
+            temp->left = createNode(item);
+            return node;
+        }
+
+        if (temp->right != nullptr)
+            q.push(temp->right);
+        else
+        {
+            temp->right = createNode(item);
+            return node;
+        }
+    }
+    return node;
+}
 // driver code
 int main(int argc, char const *argv[])
 {
@@ -72,6 +105,7 @@ int main(int argc, char const *argv[])
     root->left->left = createNode(4);
     root->left->right = createNode(5);
 
+    levelOrderInsertion(root, 6);
     cout << "PreOrder Traversal :";
     traversePreOrder(root);
     cout << "\n";
@@ -83,5 +117,6 @@ int main(int argc, char const *argv[])
     cout << "Post Order Traversal :";
     traversePostOrder(root);
     cout << "\n";
+
     return 0;
 }
