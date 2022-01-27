@@ -39,4 +39,4 @@
 
 ## Searching
 
--[x] Linear Search
+- [x] Linear Search
