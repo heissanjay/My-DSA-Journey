@@ -3,6 +3,8 @@
 ![dsa-banner](imgs/dsa-banner.jpg)
 [Image Credits](https://medium.com/@mohamedmansormemo/algorithms-and-data-structure-1c2ad2dd8675)
 
+# Data Structures
+
 - [x] Arrays
 - [x] Linked List
   - [x] Singly Linked list
@@ -32,3 +34,9 @@
   - [ ] Min Heap
   - [ ] Max Heap
 - [ ] Hashing
+
+# Algorithms
+
+## Searching
+
+-[x] Linear Search
