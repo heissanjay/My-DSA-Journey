@@ -54,3 +54,20 @@ void levelOrderTraversal(struct Node *node)
     }
     cout << "\n";
 }
+int main(int argc, char const *argv[])
+{
+    struct Node *root = nullptr;
+    root = createNode(10);
+    root->left = createNode(5);
+    root->right = createNode(15);
+
+    root->left->left = createNode(1);
+    root->left->right = createNode(8);
+
+    root->right->left = createNode(13);
+    root->right->right = createNode(20);
+
+    insertNode(root, 35);
+    levelOrderTraversal(root);
+    return 0;
+}
