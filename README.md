@@ -21,7 +21,7 @@
 - [x] Trees
   - [x] Tree
   - [x] Binary Tree
-  - [ ] Binary Search Tree
+  - [x] Binary Search Tree
   - [ ] AVL Tree
   - [ ] Threaded Binary tree
   - [x] Tree Traversal
@@ -40,3 +40,8 @@
 ## Searching
 
 - [x] Linear Search
+- [x] Binary Search
+
+## Sorting
+
+- [x] Bubble Sort
