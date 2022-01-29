@@ -32,27 +32,88 @@ struct Node *insertNode(struct Node *node, int val)
 
     return node;
 }
-void levelOrderTraversal(struct Node *node)
+// void levelOrderTraversal(struct Node *node)
+// {
+//     if (node == nullptr)
+//         return;
+
+//     queue<struct Node *> q;
+//     q.push(node);
+
+//     while (!q.empty())
+//     {
+//         struct Node *temp = q.front();
+//         cout << temp->item << " ";
+//         q.pop();
+
+//         if (temp->left != nullptr)
+//             q.push(temp->left);
+
+//         if (temp->right != nullptr)
+//             q.push(temp->right);
+//     }
+//     cout << "\n";
+// }
+void inorderTraversal(struct Node *root)
 {
-    if (node == nullptr)
-        return;
-
-    queue<struct Node *> q;
-    q.push(node);
-
-    while (!q.empty())
+    if (root != nullptr)
     {
-        struct Node *temp = q.front();
-        cout << temp->item << " ";
-        q.pop();
-
-        if (temp->left != nullptr)
-            q.push(temp->left);
-
-        if (temp->right != nullptr)
-            q.push(temp->right);
+        inorderTraversal(root->left);
+        cout << root->item << " ";
+        inorderTraversal(root->right);
     }
-    cout << "\n";
+}
+struct Node *findMin(struct Node *root)
+{
+    struct Node *temp = root;
+    while (temp != nullptr && temp->left != nullptr)
+    {
+        temp = temp->left;
+    }
+    return temp;
+}
+struct Node *deleteNode(struct Node *root, int val)
+{
+    // base cases
+    if (root == nullptr)
+        return root;
+    else if (val < root->item)
+        root->left = deleteNode(root->left, val);
+    else if (val > root->item)
+        root->right = deleteNode(root->right, val);
+    else
+    {
+        // Case 1: If the node contains no child
+        if (root->left == nullptr && root->right == nullptr)
+        {
+            free(root);
+            root = nullptr;
+        }
+        // case 2: if the node contains only one child ( either left or right)
+        else if (root->left == nullptr)
+        {
+            struct Node *temp = root;
+            root = root->right;
+            free(temp);
+        }
+        else if (root->right == nullptr)
+        {
+            struct Node *temp = root;
+            root = root->left;
+            free(root);
+        }
+        // case 3. if the node contains two children
+        else
+        {
+            // find minimum value in the right sub tree
+            struct Node *temp = findMin(root->right);
+            // assign it to root
+            root->item = temp->item;
+            // delete the duplicate
+            root->right = deleteNode(root->right, temp->item);
+        }
+    }
+    return root;
 }
 int main(int argc, char const *argv[])
 {
@@ -68,6 +129,10 @@ int main(int argc, char const *argv[])
     root->right->right = createNode(20);
 
     insertNode(root, 35);
-    levelOrderTraversal(root);
+    inorderTraversal(root);
+    cout << "\n";
+    deleteNode(root, 8);
+    inorderTraversal(root);
+    cout << "\n";
     return 0;
 }
