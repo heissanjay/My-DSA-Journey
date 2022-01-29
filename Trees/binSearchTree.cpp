@@ -32,3 +32,25 @@ struct Node *insertNode(struct Node *node, int val)
 
     return node;
 }
+void levelOrderTraversal(struct Node *node)
+{
+    if (node == nullptr)
+        return;
+
+    queue<struct Node *> q;
+    q.push(node);
+
+    while (!q.empty())
+    {
+        struct Node *temp = q.front();
+        cout << temp->item << " ";
+        q.pop();
+
+        if (temp->left != nullptr)
+            q.push(temp->left);
+
+        if (temp->right != nullptr)
+            q.push(temp->right);
+    }
+    cout << "\n";
+}
