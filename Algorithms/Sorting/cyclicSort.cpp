@@ -32,3 +32,9 @@ void cyclicSort(int arr[], int arrlen)
         }
     }
 }
+void swap(int arr[], int cur, int crt)
+{
+    int temp = arr[cur];
+    arr[cur] = arr[crt];
+    arr[crt] = temp;
+}
