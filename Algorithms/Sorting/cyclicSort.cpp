@@ -9,3 +9,26 @@ int arrlen = sizeof(arr) / sizeof(arr[0]);
 
 void cyclicSort(int arr[], int arrlen); // function prototype
 void swap(int arr[], int cur, int crt); // function prototype
+
+int main(int argc, char const *argv[])
+{
+
+    return 0;
+}
+
+void cyclicSort(int arr[], int arrlen)
+{
+    int i = 0;
+    int crt = arr[i] - 1;
+    while (i < arrlen - 1)
+    {
+        if (arr[i] != arr[crt])
+        {
+            swap(arr, i, crt);
+        }
+        else
+        {
+            i++;
+        }
+    }
+}
