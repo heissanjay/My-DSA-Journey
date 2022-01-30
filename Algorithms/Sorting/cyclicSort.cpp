@@ -13,7 +13,7 @@ void swap(int arr[], int cur, int crt); // function prototype
 int main(int argc, char const *argv[])
 {
     cyclicSort(arr, arrlen);
-    for (size_t i = 0; i < arrlen - 1; i++)
+    for (int i = 0; i < arrlen; i++)
     {
         cout << arr[i] << " ";
     }
@@ -24,9 +24,10 @@ int main(int argc, char const *argv[])
 void cyclicSort(int arr[], int arrlen)
 {
     int i = 0;
-    int crt = arr[i] - 1;
-    while (i < arrlen - 1)
+
+    while (i < arrlen)
     {
+        int crt = arr[i] - 1;
         if (arr[i] != arr[crt])
         {
             swap(arr, i, crt);
