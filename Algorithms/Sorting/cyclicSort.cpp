@@ -12,7 +12,12 @@ void swap(int arr[], int cur, int crt); // function prototype
 
 int main(int argc, char const *argv[])
 {
-
+    cyclicSort(arr, arrlen);
+    for (size_t i = 0; i < arrlen - 1; i++)
+    {
+        cout << arr[i] << " ";
+    }
+    cout << "\n";
     return 0;
 }
 
