@@ -59,3 +59,16 @@ struct Node *left_rotate(struct Node *x)
 
     return y; // y becomes root
 }
+// right rotate
+struct Node *right_rotate(struct Node *y)
+{
+    struct Node *x = y->left;
+    struct Node *t = x->right;
+    x->right = y;
+    y->left = t;
+
+    x->height = max(getHeight(x->left), getHeight(x->right)) + 1; // height of x
+    y->height = max(getHeight(y->left), getHeight(y->right)) + 1; // height of y
+
+    return x; // x becomes root
+}
