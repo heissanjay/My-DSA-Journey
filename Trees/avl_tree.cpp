@@ -25,3 +25,37 @@ int getHeight(struct Node *node)
     }
     return node->height;
 }
+// func to create a new node
+
+struct Node *createNode(int val)
+{
+    // allocate memory for new node
+    struct Node *newNode = (struct Node *)malloc(sizeof(struct Node));
+    newNode->item = val;
+    newNode->left = nullptr;
+    newNode->right = nullptr;
+    newNode->height = 1;
+    return newNode;
+}
+
+// func to get the balance factor of a node
+int getBalanceFactor(struct Node *node)
+{
+    if (node == nullptr)
+        return 0;
+
+    return getHeight(node->left) - getHeight(node->right);
+}
+// left rotate
+struct Node *left_rotate(struct Node *x)
+{
+    struct Node *y = x->right; // y is right sub tree of x
+    struct Node *t = y->left;
+    y->left = x;
+    x->right = t; // t is y's left sub tree
+
+    x->height = max(getHeight(x->left), getHeight(x->right)) + 1; // height of x
+    y->height = max(getHeight(y->left), getHeight(y->right)) + 1; // height of y
+
+    return y; // y becomes root
+}
