@@ -29,8 +29,12 @@ void quicksort(int arr[], int low, int high)
             // swap
             int temp = arr[first];
             arr[first] = arr[last];
+            arr[last] = temp;
         }
     }
+
+    quicksort(arr, low, last);
+    quicksort(arr, first, high);
 }
 
 void print_array(int arr[], int size)
