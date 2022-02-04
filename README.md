@@ -45,3 +45,6 @@
 ## Sorting
 
 - [x] Bubble Sort
+- [x] Cyclic Sort
+- [x] Merge Sort
+- [x] Quick Sort
