@@ -3,7 +3,35 @@
 #include <iostream>
 using namespace std;
 
-void quicksort(int arr[], int low, int high);
+void quicksort(int arr[], int low, int high)
+{
+    if (low >= high)
+        return;
+
+    int first = low;
+    int last = high;
+    int mid = (first + last) / 2;
+    int pivot = arr[mid];
+
+    while (first <= last)
+    {
+        while (pivot > arr[first])
+        {
+            first++;
+        }
+        while (pivot < arr[last])
+        {
+            last--;
+        }
+
+        if (first <= last)
+        {
+            // swap
+            int temp = arr[first];
+            arr[first] = arr[last];
+        }
+    }
+}
 
 void print_array(int arr[], int size)
 {
