@@ -22,7 +22,7 @@
   - [x] Tree
   - [x] Binary Tree
   - [x] Binary Search Tree
-  - [ ] AVL Tree
+  - [x] AVL Tree
   - [ ] Threaded Binary tree
   - [x] Tree Traversal
 - [ ] Graphs
@@ -37,14 +37,15 @@
 
 # Algorithms
 
-## Searching
+- [x] Searching
+  - [x] Linear Search
+  - [x] Binary Search
+- [x] Sorting
+  - [x] Bubble Sort
+  - [x] Cyclic Sort
+  - [x] Merge Sort
+  - [x] Quick Sort
 
-- [x] Linear Search
-- [x] Binary Search
+# Problem set
 
-## Sorting
-
-- [x] Bubble Sort
-- [x] Cyclic Sort
-- [x] Merge Sort
-- [x] Quick Sort
+- [x] Linked List
