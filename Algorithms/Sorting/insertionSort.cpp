@@ -37,11 +37,13 @@ void display(int arr[])
     {
         cout << arr[i] << " ";
     }
+    cout<<"\n";
 }
 int main(int argc, char const *argv[])
 {
+    cout<<"Array before Sorted: ";
     display(arr);
-    insertionSort(arr);
-    display(arr);
+    cout<<"Array after Sorted: ";
+    dislplay(arr);
     return 0;
 }
