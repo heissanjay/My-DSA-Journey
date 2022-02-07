@@ -45,6 +45,7 @@
   - [x] Cyclic Sort
   - [x] Merge Sort
   - [x] Quick Sort
+  - [x] Insertion Sort
 
 # Problem set
 
