@@ -39,6 +39,7 @@
 - [x] Searching
   - [x] Linear Search
   - [x] Binary Search
+  - [x] Linear Search in 2D Array
 - [x] Sorting
   - [x] Bubble Sort
   - [x] Cyclic Sort

@@ -1,5 +1,4 @@
-// implementation of linear search in row wise sorted and column wise sorted array
-
+// implementation of linear search in 2D array
 #include <iostream>
 #include <vector>
 using namespace std;
