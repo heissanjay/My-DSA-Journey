@@ -23,7 +23,6 @@
   - [x] Binary Tree
   - [x] Binary Search Tree
   - [x] AVL Tree
-  - [ ] Threaded Binary tree
   - [x] Tree Traversal
 - [ ] Graphs
   - [ ] Graph
@@ -46,6 +45,7 @@
   - [x] Merge Sort
   - [x] Quick Sort
   - [x] Insertion Sort
+  - [x] Selection Sort
 
 # Problem set
 
