@@ -40,6 +40,7 @@
   - [x] Linear Search
   - [x] Binary Search
   - [x] Linear Search in 2D Array
+  - [x] Search in Row wise sorted and column wise sorted matrix
 - [x] Sorting
   - [x] Bubble Sort
   - [x] Cyclic Sort
