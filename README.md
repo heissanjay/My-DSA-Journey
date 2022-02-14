@@ -34,6 +34,8 @@
   - [ ] Max Heap
 - [ ] Hashing
 
+<hr>
+
 # Algorithms
 
 - [x] Searching
@@ -49,7 +51,8 @@
   - [x] Quick Sort
   - [x] Insertion Sort
   - [x] Selection Sort
+<hr>
 
 # Problem set
-
+- [x] Binary Search
 - [x] Linked List
