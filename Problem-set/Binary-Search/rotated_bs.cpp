@@ -4,30 +4,29 @@ class Solution
 {
 public:
     // find pivot element
-    int findPivot(vector<int> &arr)
+    int findPivot(vector<int> arr)
     {
-        int s = 0;
-        int e = arr.size() - 1;
-
-        while (s <= e)
+        int start = 0;
+        int end = arr.size() - 1;
+        while (start <= end)
         {
-            int m = s + (e - s) / 2;
-            if (m < e && arr[m] > arr[m + 1])
-            {
-                return m;
-            }
+            int mid = start + (end - start) / 2;
 
-            if (s > m && arr[m - 1] > arr[m])
+            if (mid < end && arr[mid] > arr[mid + 1])
             {
-                return m - 1;
+                return mid;
             }
-            if (arr[m] <= arr[s])
+            if (mid > start && arr[mid] < arr[mid - 1])
             {
-                e = m - 1;
+                return mid - 1;
+            }
+            if (arr[mid] <= arr[start])
+            {
+                end = mid - 1;
             }
             else
             {
-                s = m + 1;
+                start = mid + 1;
             }
         }
         return -1;
@@ -53,3 +52,24 @@ public:
         }
         return -1;
     }
+    int search(vector<int> &nums, int target)
+    {
+        int piv = findPivot(nums);
+        // array is not rotated
+        if (piv == -1)
+        {
+            return binarySearch(nums, target, 0, nums.size() - 1);
+        }
+        if (nums[piv] == target)
+            return piv;
+
+        if (target >= nums[0])
+        {
+            return binarySearch(nums, target, 0, piv - 1);
+        }
+        else
+        {
+            return binarySearch(nums, target, piv + 1, nums.size() - 1);
+        }
+    }
+};
