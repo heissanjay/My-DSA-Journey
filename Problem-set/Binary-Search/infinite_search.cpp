@@ -40,3 +40,11 @@ int binarySearch(vector<int> arr, int target, int start, int end)
     }
     return -1;
 }
+int main(int argc, char const *argv[])
+{
+    // target > 205 , will give an error since the array is not really infinte and
+    // the value of "e" will exceeds the size of array
+    int ans = solution(arr, 2);
+    cout << ans;
+    return 0;
+}
