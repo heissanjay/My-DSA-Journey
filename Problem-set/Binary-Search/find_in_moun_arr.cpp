@@ -60,4 +60,12 @@ public:
         }
         return -1;
     }
-}
+    int findInMountainArray(int target, MountainArray &mountainArr)
+    {
+        int p = peakIndexInMountainArray(mountainArr);
+        int f = orderAgonsticBinarySearch(mountainArr, target, 0, p);
+        if (f != -1)
+            return f;
+        return orderAgonsticBinarySearch(mountainArr, target, p + 1, mountainArr.length() - 1);
+    }
+};
