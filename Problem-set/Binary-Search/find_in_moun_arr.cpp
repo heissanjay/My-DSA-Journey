@@ -22,4 +22,42 @@ public:
         }
         return s;
     }
+
+    int orderAgonsticBinarySearch(MountainArray &mountainArr, int target, int s, int e)
+    {
+        bool is_non_de = mountainArr.get(s) < mountainArr.get(e);
+
+        while (s <= e)
+        {
+            int m = s + (e - s) / 2;
+
+            if (target == mountainArr.get(m))
+            {
+                return m;
+            }
+            if (is_non_de)
+            {
+                if (mountainArr.get(m) < target)
+                {
+                    s = m + 1;
+                }
+                else
+                {
+                    e = m - 1;
+                }
+            }
+            else
+            {
+                if (mountainArr.get(m) > target)
+                {
+                    s = m + 1;
+                }
+                else
+                {
+                    e = m - 1;
+                }
+            }
+        }
+        return -1;
+    }
 }
