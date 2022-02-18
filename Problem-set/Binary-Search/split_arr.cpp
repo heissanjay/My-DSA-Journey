@@ -31,3 +31,15 @@ public:
                     sum += num;
                 }
             }
+            if (pieces > m)
+            {
+                start = mid + 1;
+            }
+            else
+            {
+                end = mid;
+            }
+        }
+        return end;
+    }
+};
