@@ -51,8 +51,10 @@
   - [x] Quick Sort
   - [x] Insertion Sort
   - [x] Selection Sort
-<hr>
+  <hr>
 
 # Problem set
+
+- [x] Linear Search
 - [x] Binary Search
 - [x] Linked List
