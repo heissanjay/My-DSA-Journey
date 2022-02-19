@@ -1,3 +1,5 @@
+// https://leetcode.com/problems/find-numbers-with-even-number-of-digits
+
 class Solution
 {
 public:
@@ -21,7 +23,10 @@ public:
     int findDigits(int num)
     {
         int ans = 0;
+        // if negative number
+        //  if(num < 0) num*=-1;  convert negative number to positive
 
+        // if (num == 0) return 1;
         while (num > 0)
         {
             ans++;
