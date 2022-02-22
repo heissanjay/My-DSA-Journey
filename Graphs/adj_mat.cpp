@@ -49,4 +49,24 @@ public:
             cout << "\n";
         }
     }
+
+    // Destructor to delete matrix
+    ~Graph()
+    {
+        for (int i = 0; i < numOfVertices; i++)
+            delete[] adjacencyMatrix[i];
+        delete[] adjacencyMatrix;
+    }
 };
+int main(int argc, char const *argv[])
+{
+    Graph graph(4);
+    graph.addEdge(0, 1);
+    graph.addEdge(0, 2);
+    graph.addEdge(1, 2);
+    graph.addEdge(2, 0);
+    graph.addEdge(2, 3);
+
+    graph.print_matrix();
+    return 0;
+}
