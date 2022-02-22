@@ -25,4 +25,28 @@ public:
             }
         }
     }
+
+    // add edge
+    void addEdge(int i, int j)
+    {
+        adjacencyMatrix[i][j] = true;
+        adjacencyMatrix[j][i] = true;
+    }
+
+    // remove edge
+    void removeEdje(int i, int j)
+    {
+        adjacencyMatrix[i][j] = false;
+        adjacencyMatrix[j][i] = false;
+    }
+    void print_matrix()
+    {
+        for (int i = 0; i < numOfVertices; i++)
+        {
+            cout << i << " : ";
+            for (int j = 0; j < numOfVertices; j++)
+                cout << adjacencyMatrix[i][j] << " ";
+            cout << "\n";
+        }
+    }
 };
