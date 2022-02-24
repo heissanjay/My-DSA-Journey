@@ -28,4 +28,10 @@ public:
         }
         return ans;
     }
+    void swap(vector<int> &arr, int cur, int crt)
+    {
+        int temp = arr[cur];
+        arr[cur] = arr[crt];
+        arr[crt] = temp;
+    }
 };
