@@ -19,3 +19,19 @@ public:
                 i++;
             }
         }
+        for (int i = 0; i < nums.size(); i++)
+        {
+            if (nums[i] != i + 1)
+            {
+                return {nums[i], i + 1};
+            }
+        }
+        return {-1, -1};
+    }
+    void swap(vector<int> &nums, int cur, int crt)
+    {
+        int temp = nums[cur];
+        nums[cur] = nums[crt];
+        nums[crt] = temp;
+    }
+};
