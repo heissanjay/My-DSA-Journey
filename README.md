@@ -58,3 +58,4 @@
 - [x] Linear Search
 - [x] Binary Search
 - [x] Linked List
+- [x] Cyclic sort
