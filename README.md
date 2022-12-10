@@ -16,7 +16,6 @@
 - [x] Queues
   - [x] Linear Queue
   - [x] Circular Queue
-  - [ ] Priority Queue
   - [ ] Double Ended Queue / Deque
 - [x] Trees
   - [x] Tree
@@ -28,11 +27,11 @@
   - [ ] Graph
   - [ ] Breath First Search
   - [ ] Depth First Search
-- [ ] Heaps
+- [ ] Heaps / Priority Queue
   - [ ] Heap
   - [ ] Min Heap
   - [ ] Max Heap
-- [ ] Hashing
+- [ ] Hash Table
 
 <hr>
 
@@ -59,3 +58,4 @@
 - [x] Binary Search
 - [x] Linked List
 - [x] Cyclic sort
+- [x] Binary Tree
